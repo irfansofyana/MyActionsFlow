@@ -15,8 +15,8 @@ jobs:
       with:
         to: ${{ secrets.TELEGRAM_TO }}
         token: ${{ secrets.TELEGRAM_TOKEN }}
-      message: |
-            *New Youtube Videos: ${{on.youtube.outputs.title}}*
-            
-            ${{on.youtube.outputs.description}} ${{on.youtube.outputs.link}}
-      format: markdown
+        message: |
+              *New Youtube Videos: ${{on.youtube.outputs.title}}*
+              
+              ${{on.youtube.outputs.description}} ${{on.youtube.outputs.link}}
+        format: markdown
