@@ -1,0 +1,21 @@
+on:
+  youtube:
+    channel_id:
+      - "UCdngmbVKX1Tgre699-XLlUA" # https://www.youtube.com/c/TechWorldwithNana
+      - "UC14ZKB9XsDZbnHVmr4AmUpQ" # https://www.youtube.com/c/ProgrammerZamanNow
+      - "UC8butISFwT-Wl7EV0hUK0BQ" # https://www.youtube.com/c/Freecodecamp
+jobs:
+  telegram:
+    name: Send a telegram message
+    runs-on: ubuntu-latest
+    steps:
+    - name: Send telegram message 
+      uses: appleboy/telegram-action@v0.1.0
+      with:
+        to: ${{ secrets.TELEGRAM_TO }}
+        token: ${{ secrets.TELEGRAM_TOKEN }}
+      message: |
+            *New Youtube Videos: ${{on.youtube.outputs.title}}*
+            
+            ${{on.youtube.outputs.description}} ${{on.youtube.outputs.link}}
+      format: markdown
