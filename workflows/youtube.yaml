@@ -1,3 +1,4 @@
+name: Send a telegram message when new Youtube videos update
 on:
   youtube:
     channel_id:
